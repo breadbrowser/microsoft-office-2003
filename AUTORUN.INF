@@ -1,0 +1,9 @@
+[autorun]
+OPEN=SETUP.EXE /AUTORUN
+ICON=SETUP.EXE,1
+
+shell\configure=&Configure...
+shell\configure\command=SETUP.EXE
+
+shell\install=&Install...
+shell\install\command=SETUP.EXE

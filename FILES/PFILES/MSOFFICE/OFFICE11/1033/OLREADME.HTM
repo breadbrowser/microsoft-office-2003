@@ -1,0 +1,71 @@
+<html dir="ltr"><head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="en-us"><META HTTP-EQUIV="assetid" CONTENT="HR01048340"><title>Microsoft Office Outlook 2003 Readme File</title></head><body><h1>Microsoft Office Outlook 2003 Readme File</h1><META HTTP-EQUIV="assetid" CONTENT="HR01048340"><title>Microsoft Office Outlook 2003 Readme File</title>
+
+<style>
+<!--
+	h1	{font-size: 140%; margin-top: .4em;}
+	h2	{font-size: 120%; margin-top: .2em;}
+	h3	{font-size: 100%; margin-top: .2em; font-weight: bold;}
+	h4	{font-size: 100%; margin-top: .2em; font-weight: bold;}
+	h5	{font-size: 100%; margin-top: .2em; font-weight: bold;}
+	body	{bgcolor: #ffffff; font-family: Tahoma, Arial, Helvetica, sans-serif; font-size: 80%; }
+	p	{font-size: 100%; margin-left: 2em;}
+	pre	{font-size: 100%; margin-left: 2em;}
+	ol	{font-size: 100%; margin-top: .5em; margin-left: 4em;}
+	ul	{font-size: 100%; margin-top: .5em;; margin-left: 4em;}
+	li	{margin-bottom: .7em; margin-left: 0em;}
+	table	{font-size: 100%; margin-top: 1em; margin-left: 2em;}
+	th	{text-align: left; background: #CCCCCC; margin: .25em; vertical-align: bottom;}
+	tr	{vertical-align: top;}
+	td	{margin: .25em; vertical-align: top; border-bottom: 1px solid #CCCCCC; }
+
+	
+-->
+</style>
+
+
+
+<h3>© 2003 Microsoft Corporation.  All rights reserved.</h3>
+<p>This document provides late-breaking information about Microsoft Office Outlook 2003.</p>
+<h3>How to use this document</h3>
+<p>To view the Readme file on the screen, maximize the
+browser window. To print the Readme file, click the <b class="bterm">Print</b> button on the toolbar.</p>
+<hr>
+<h2><a id="Contents" name="Contents">Contents</a></h2>
+
+<h3>Working with Outlook</h3><p><a href="#Rules">Rules may become incompatible after installing Outlook</a></p><p><a href="#AddIns">Add-ins that previously worked with Outlook may now cause you to be prompted to allow access to Outlook data</a></p><p><a href="#PS419541">ActiveX controls will not load in one-off forms</a></p><p><a href="#PS444960">Using Outlook 2003 and then using any Collaboration Data Objects Library (CDO) 1.2x application may cause Microsoft Exchange Server to stop working
+
+</a></p><p><h3>Outlook Object Model</h3></p><p><a href="#OM">Additional properties blocked in object model: Outlook Object Model Guard</a></p><p><a href="#OMMoreInfo">More information on object model blocks in Outlook</a></p><h3>Working with Meeting Workspaces</h3><p><a href="#MWSConsiderations">Considerations when linking Outlook meeting requests to Meeting Workspaces</a></p><p><h3>SharePoint Alerts</h3></p><p><a href="#PS369556">View SharePoint alerts on Internet sites in the <b class="ui">Rules and Alerts</b> dialog box
+
+</a></p><p><a href="#PS369567">View Windows SharePoint Services alerts in the <b class="ui">Rules and Alerts</b> dialog box
+</a></p><h2>Working with Outlook</h2><p><h3><a id="Rules" name="Rules">Rules may become incompatible after installing Outlook</a></h3></p><p>Outlook includes the following new rule types:</p><ul><li>Flag message from someone with a colored flag.</li><li>Display new e-mail messages from someone in the new item alert window.</li></ul><p>If you create new rules using these new rule types in Outlook 2003, your rules may not work correctly if you use Microsoft Outlook 2002 Service Pack 1 or earlier for that e-mail account. To avoid having your rules become incompatible, follow these steps:</p><ul><li>Uninstall Outlook 2003, and then install Microsoft Outlook 2002 Service Pack 2 or later.</li><li>Install Microsoft Outlook 2002 Service Pack 2 or later on any computer you use to access the same account.
+</li></ul><p>Return to <a href="#Contents">Contents</a></p><p><h3><a id="AddIns" name="AddIns">Add-ins that previously worked with Outlook may now cause you to be prompted to allow access to Outlook data</a></h3></p><p>Outlook has increased security around the Outlook Object Model, which many third-party software companies use to integrate their product with Outlook. These new security enhancements may now cause you to be prompted to allow the programs access to your Outlook data.</p><p>In some cases, the third-party software companies may provide updated versions of their software that will not cause you to be prompted for access to your Outlook data. For technical information regarding this change, see the <a href="#OMSection">Outlook Object Model</a> section later in this file and the Microsoft Developer Network (MSDN) Web article titled  <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/dno2k3ta/html/odc_olsecnotescomaddins.asp">Important Security Notes for Microsoft Outlook COM Add-In Developers</a>.</p><p>Return to <a href="#Contents">Contents</a></p><p><h3><a id="PS419541" name="PS419541">ActiveX controls will not load in one-off forms</a></h3></p><p>When Outlook receives a message containing a form definition, the item is considered to be a one-off form. To help prevent unwanted script and controls from running in one-off forms, Outlook will not load ActiveX controls in one-off forms by default. This behavior can be controlled by administrators using one of the following registry settings:</p><p>HKCU\Software\Policies\Microsoft\Office\11.0\Outlook\Security</p><p>HKCU\Software\Microsoft\Office\11.0\Outlook\Security</p><p>AllowActiveXOneOffForms (DWORD)</p><p>not present - Only load controls that are listed below. (default)
+<br>0 - Only load controls that are listed below.
+<br>1 - Allow only safe controls.
+<br>2 - Allow all ActiveX controls.
+</p><p>The following controls can be used in one-off forms:</p><ul><li>Controls from fm20.dll</li><li>Microsoft Office Outlook Rich Format Control</li><li>Microsoft Office Outlook Recipient Control</li><li>Microsoft Office Outlook View Control</li></ul><p>Return to <a href="#Contents">Contents</a></p><p><h3><a id="PS444960" name="PS444960">Using Outlook 2003 and then using any Collaboration Data Objects Library (CDO) 1.2x application may cause Microsoft Exchange Server to stop working</a></h3></p><p>If you use Outlook 2003 and then use any Collaboration Data Objects Library (CDO) 1.2x application, such as Microsoft Outlook Web Access for Microsoft Exchange Server 5.5, Exchange Server may stop working if you have not previously installed the hotfix mentioned in the applicable Knowledge Base (KB) article below. 
+</p><p><b>Note</b>  Versions of Outlook Web Access for Exchange Server later than Exchange Server 5.5 are not affected because the later versions do not use CDO. However, other CDO-enabled applications are affected unless the hotfix has been installed for the version of Exchange Server that you are using.
+</p><p>For more information about this issue, see the KB article applicable to the version of Exchange Server that you are using on <a href="
+http://office.microsoft.com/search/redir.aspx?AssetID=
+XT010183471033
+&amp;Origin=HR010483401033
+&amp;CTT=5
+">Microsoft Office Product Support for Office Users</a>.</p><p><b class="runinhead">Exchange Server 2003 SP1</b>       #823343 CDO Heap Corruption When You Try to Access an Exchange Mailbox
+</p><p><b class="runinhead">Exchange Server 2000</b>            #824960 CDO Heap Corruption When You Try to Access an Exchange Mailbox
+
+</p><p><b class="runinhead">Exchange Server 5.5</b>            #818709 Outlook Web Access Stops Responding When You Try to Access an Exchange Mailbox
+</p><p>Return to <a href="#Contents">Contents</a></p><h2><a id="OMSection" name="OMSection">Outlook Object Model</a></h2><p><h3><a id="OM" name="OM">Additional properties blocked in object model: Outlook Object Model Guard</a></h3></p><p>In addition to inheriting the Outlook 2002 Object Model Guard behavior, Outlook 2003 blocks code that attempts to access certain properties of the Outlook object model for security reasons. These additional blocks may cause programs that worked with previous versions of Outlook to encounter security blocks. The additional properties that have been blocked in Outlook 2003 are:</p><ul><li> The IMAddress and Body properties of a ContactItem object</li><li>The HTMLBody and Body properties of a MailItem object</li><li>The HTMLBody and Body properties of a PostItem object</li><li>The Body property of an AppointmentItem object</li><li>The Body property of a TaskItem object</li><li>The Body property of a TaskRequestItem object</li><li>The Body property of a TaskRequestAcceptItem object</li><li>The Body property of a TaskRequestDeclineItem object</li><li>The Body property of a TaskRequestUpdateItem object</li><li>The Body property of a DistListItem object</li><li>The Body property of a JournalItem object</li><li>The Body property of a MeetingItem object</li><li>The Body property of a ReportItem object</li><li>The Body property of a RemoteItem object</li><li>The Body property of a NoteItem object</li><li>The Body property of a DocumentItem object</li><li>The HTMLEditor and WordEditor properties of the Inspector object</li><li>The HTMLBody, Body, and SenderEmailAddress properties of the MailItem object</li><li>The HTMLBody, Body, and SenderEmailAddress properties of the PostItem object</li><li>The Body and SenderEmailAddress properties of the MeetingItem object</li></ul><p>Return to <a href="#Contents">Contents</a></p><p><h3><a id="OMMoreInfo" name="OMMoreInfo">More information on object model blocks in Outlook</a></h3></p><p>For more information about object model blocks in Outlook, search for  the following Microsoft Knowledge Base article: <nobr>Q290498 OL2002: Add-in or Custom Solution Causes a Warning to Appear on <a href="
+http://office.microsoft.com/search/redir.aspx?AssetID=
+XT010183471033
+&amp;Origin=HR010483401033
+&amp;CTT=5
+">Microsoft Office Product Support for Office Users</a></nobr>.</p><p>Return to <a href="#Contents">Contents</a></p><h2>Working with Meeting Workspaces</h2><p><h3><a id="MWSConsiderations" name="MWSConsiderations">Considerations when linking Outlook meeting requests to Meeting Workspaces</a></h3></p><p><b class="bterm">Nonrecurring meetings</b><br>More than one nonrecurring meeting request can link to the same Meeting Workspace if the workspace has not previously been linked to a recurring meeting series.</p><p><b class="bterm">Recurring meetings</b><ul><li>Only one recurring meeting series can link to a workspace. At the time you link the series to the workspace, the workspace cannot already be linked to another meeting.</li><li>You cannot link one meeting in the recurring meeting series to a different workspace than the main series is linked to.</li><li>Once you remove a Meeting Workspace link from the meeting request for a recurring meeting series, you cannot link that request to the same workspace later. However, you can link it to a different workspace.</li><li>When using Outlook to change the recurrence pattern of an existing meeting series to reduce the number of occurrences, not all changes to the pattern are made in the workspace. If the workspace already contains data, such as an agenda or documents, for some dates in the series, those dates will not be removed.</li><li>The Meeting Workspace task pane in Outlook is not available when you open a single instance of a recurring meeting or appointment series.</li></ul></p><p><b class="bterm">Using delegates</b><br>To permit an Outlook delegate to create a Meeting Workspace for you, the delegate must first have permissions on the Microsoft Windows SharePoint Services Web site where the Meeting Workspace will be created.</p><p>Return to <a href="#Contents">Contents</a></p><h2>SharePoint Alerts</h2><p><h3><a id="PS369556" name="PS369556">View SharePoint alerts on Internet sites in the <b class="ui">Rules and Alerts</b> dialog box
+
+</a></h3></p><p>To receive Microsoft Windows SharePoint Services alerts in Outlook, you need to add the SharePoint server’s address to the registry in the following location:</p><p>
+
+HKEY_CURRENT_USER/Software/Microsoft/Office/11.0/Common/Security/Trusted Alert Sources 
+	"siteurl" (REG_SZ) = 1    
+</p><p>Where the "siteurl" string would be "www.fourthcoffee.com" if the SharePoint site was http://www.fourthcoffee.com.
+</p><p>Return to <a href="#Contents">Contents</a></p><p><h3><a id="PS369567" name="PS369567">View Windows SharePoint Services alerts in the <b class="ui">Rules and Alerts</b> dialog box
+</a></h3></p><p>If you open the <b class="ui">Rules and Alerts</b> dialog box when using Microsoft Windows Server 2003 as your operating system, alerts that were previously created on intranet Web sites will not be displayed in the <b class="ui">Alerts</b> list. Any new alert sources that have not been verified will be permanently deleted from the <b class="ui">Alert Source</b> list. To work around this problem, add the SharePoint sites to the list of intranet sites or trusted sites in Microsoft Internet Explorer.</p><p>Return to <a href="#Contents">Contents</a></p></body></html>

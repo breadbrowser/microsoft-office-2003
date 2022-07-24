@@ -1,0 +1,69 @@
+MICROSOFT JUNK E-MAIL FILTER README
+
+The Junk and Adult Content filters work by looking for key words.  This file is a description
+of exactly which words the filter looks for and where the filter looks for them.
+
+Junk E-mail Filter:
+
+From is blank
+Subject contains "advertisement"
+Body contains "money back "
+Body contains "cards accepted"
+Body contains "removal instructions"
+Body contains "extra income"
+Subject contains "!" AND Subject contains "$"
+Subject contains "!" AND Subject contains "free"
+Body contains ",000" AND Body contains "!!" AND Body contains "$"
+Body contains "for free?"
+Body contains "for free!"
+Body contains "Guarantee" AND (Body contains "satisfaction" OR Body contains "absolute")
+Body contains "more info " AND Body contains "visit " AND Body contains "$"
+Body contains "SPECIAL PROMOTION"
+Body contains "one-time mail"
+Subject contains "$$"
+Body contains "$$$"
+Body contains "order today"
+Body contains "order now!"
+Body contains "money-back guarantee"
+Body contains "100% satisfied"
+To contains "friend@"
+To contains "public@"
+To contains "success@"
+From contains "sales@"
+From contains "success."
+From contains "success@"
+From contains "mail@"
+From contains "@public"
+From contains "@savvy"
+From contains "profits@"
+From contains "hello@"
+Body contains " mlm"
+Body contains "@mlm"
+Body contains "///////////////"
+Body contains "check or money order"
+
+
+Adult Content Filter:
+
+Subject contains " xxx"
+Subject contains "over 18"
+Subject contains "over 21"
+Subject contains "adult s"
+Subject contains "adults only"
+Subject contains "be 18"
+Subject contains "18+"
+Body contains "over 18"
+Body contains "over 21"
+Body contains "must be 18"
+Body contains "adults only"
+Body contains "adult web"
+Body contains "must be 21"
+Body contains "adult en"
+Body contains "18+"
+Subject contains "erotic"
+Subject contains "adult en"
+Subject contains " sex"
+Body contains " xxx "
+Body contains " xxx!"
+Subject contains "free" AND Subject contains "adult"
+Subject contains "free" AND Subject contains "sex"

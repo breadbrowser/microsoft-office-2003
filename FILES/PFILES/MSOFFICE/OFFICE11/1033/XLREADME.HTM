@@ -1,0 +1,149 @@
+<html dir="ltr"><head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="en-us"><META HTTP-EQUIV="assetid" CONTENT="HR01048335"><title>Microsoft Office Excel 2003 Readme File</title></head><body><h1>Microsoft Office Excel 2003 Readme File</h1><META HTTP-EQUIV="assetid" CONTENT="HR01048335"><title>Microsoft Office Excel 2003 Readme File</title>
+
+<style>
+<!--
+	h1	{font-size: 140%; margin-top: .4em;}
+	h2	{font-size: 120%; margin-top: .2em;}
+	h3	{font-size: 100%; margin-top: .2em; font-weight: bold;}
+	h4	{font-size: 100%; margin-top: .2em; font-weight: bold;}
+	h5	{font-size: 100%; margin-top: .2em; font-weight: bold;}
+	body	{bgcolor: #ffffff; font-family: Tahoma, Arial, Helvetica, sans-serif; font-size: 80%; }
+	p	{font-size: 100%; margin-left: 2em;}
+	pre	{font-size: 100%; margin-left: 2em;}
+	ol	{font-size: 100%; margin-top: .5em; margin-left: 4em;}
+	ul	{font-size: 100%; margin-top: .5em;; margin-left: 4em;}
+	li	{margin-bottom: .7em; margin-left: 0em;}
+	table	{font-size: 100%; margin-top: 1em; margin-left: 2em;}
+	th	{text-align: left; background: #CCCCCC; margin: .25em; vertical-align: bottom;}
+	tr	{vertical-align: top;}
+	td	{margin: .25em; vertical-align: top; border-bottom: 1px solid #CCCCCC; }
+
+	
+-->
+</style>
+
+
+<h3>© 2003 Microsoft Corporation.  All rights reserved.</h3><p>This document provides late-breaking information about Microsoft Office Excel 2003.</p>
+<h3>How to use this document</h3>
+<p>To view the Readme file on the screen, maximize the
+browser window. To print the Readme file, click the <b class="bterm">Print</b> button on the toolbar.</p>
+<hr>
+<h2>Contents</h2>
+
+<h3>Working with Microsoft Office Excel 2003</h3><p><a href="#InstallOWC10">Installing Office XP Web Components</a></p><p><a href="#DataTypeDisplay">
+Data type display differences between Microsoft Windows SharePoint Services 2.0 and Office Excel 2003</a></p><p><a href="#SaveAsWebPage">Saving a worksheet as a Web Page with interactivity does not save XML mapping and XML lists</a></p><p><a href="#441229">Microsoft XML Core Services (MSXML) Version 3.0 no longer supported</a></p><p>
+<a href="#FuncChange">Functionality changed in Office Excel 2003 to facilitate lists</a></p><h3>General issues</h3><p><a href="#Currency">
+Problems with currency in Office Excel 2003 linked lists</a></p><p><a href="#WinForms">Problems handling events when using Microsoft Office 2003 Web Components on Windows Forms</a></p><p><a href="#44125">Certain XPath expressions produce exported XML that is not well-formed</a></p><p><a href="#441227">AutoFilter does not work properly when one or more cells in a range are mapped to nonrepeating elements</a></p><p><a href="#416853">Installing Office XP Web Components after installing Microsoft Office 2003 disables the Microsoft Office 2003 Web Components .NET Programmability Support</a></p><p><a href="#444522">Behavior change when importing an Office Database Connection (.odc) file with a saved user name and password into the Spreadsheet Web Component</a></p><hr><h2>Working with Microsoft Office Excel 2003</h2><h3><a id="InstallOWC10" name="InstallOWC10">Installing Office XP Web Components</a></h3><p>Microsoft Office Professional Edition 2003 includes Windows Installer Package files for both Office 2003 Web Components (Owc11.msi) and an upgraded version of Office XP Web Components (Owc10.msi). Both .msi files are located on the installation CD, and both versions are included in Microsoft Office 2003 Setup (although they are not exposed to end users as options in the Microsoft Office 2003 Setup user interface). Office 2003 Web Components are installed by default; however, the upgraded Office XP Web Components are installed only if a previous version of Office XP Web Components exists on the user's computer.</p><p> 
+
+If you want to install the upgraded Office XP Components manually on a computer that does not have a previous version of Office XP Web Components, you can run Owc10.msi directly from the setup CD.</p><p>
+
+If you use solutions that rely on Office XP Web Components, you are deploying to new clients (that is, not upgrading), and you want to perform a customized setup, you can ensure that the upgraded Office XP Web Components are included in the Office 2003 installation by setting the OWC10EXISTS property either on the command line when running Setup.exe or in the Setup settings file (Setup.ini).</p><p>
+
+Example:</p><pre><code>OWC10EXISTS=1</code></pre><h3><a id="DataTypeDisplay" name="DataTypeDisplay">Data type display differences between Microsoft Windows SharePoint Services 2.0 and Office Excel 2003</a></h3><p>
+
+
+
+The displayed precision of numbers may sometimes be different in Windows SharePoint Services and Office Excel 2003. This only affects records that have been changed in Office Excel 2003. Although there may be differences in the way numbers are displayed, the precision of the underlying values will be the same in Windows SharePoint Services and Office Excel 2003, except for numbers greater than 15 digits in SharePoint lists. These numbers lose precision in Office Excel 2003.</p><h3><a id="SaveAsWebPage" name="SaveAsWebPage">Saving a worksheet as a Web page with interactivity does not save XML mapping and XML lists</a></h3><pre></pre>
+
+<p>
+If you save an Excel worksheet that contains an XML map or XML list as a <b class="bterm">Web Page (*.htm; *.html)</b> or as a <b class="bterm">Single File Web Page (*.mht; *.mhtml)</b>, select <b class="bterm">Add interactivity</b>, and set the <b class="bterm">Selection: Sheet</b> option, which saves only the current worksheet, the XML map or XML list will not be saved with the Web page.</p><p>To save the XML map or XML list with the interactive Web page, you must save the entire workbook by selecting the <b class="bterm">Entire Workbook</b> option. This is because the XML map information on which XML lists depend is stored as part of the workbook and may be shared across multiple worksheets.</p><h3>
+
+<a id="441229" name="441229">Microsoft XML Core Services (MSXML) Version 3.0 no longer supported</a></h3><p>Office Excel 2003 only uses  Microsoft XML Core Services (MSXML) Version 5.0 to work with XML. To improve security, Excel no longer supports applying XSL style sheets when opening XML files that use the old XSL Namespaces to transform XML data by using MSXML Version 3.0. For example, you might have previously used this feature to load XML data as HTML or transform the XML into XML Spreadsheet (XMLSS).  XSL transforms applied to XML files that contain a default processing instruction to transform them into HTML using the old XSL syntax and MSXML Version 3.0 will no longer work in Office Excel 2003.</p><h3><a id="FuncChange" name="FuncChange">Functionality changed in Office Excel 2003 to facilitate lists</a></h3><p>
+Several changes have been made to existing Excel functionality in order to facilitate list management and promote list integrity. Included are changes to navigation, range selection, and editing, as well as minor changes to other functionality to ensure that Excel lists behave with the desired functionality.</p><p><b class="bterm">Navigation inside the list</b></p><p>
+
+A list in Excel can be said to behave like its own spreadsheet within the larger Excel spreadsheet. For example, pressing the END+arrow key combinations navigates in the direction specified by the arrow key to the last cell within the list boundary in that direction.  Also, if you press TAB in the right-most column of a list, the cell pointer relocates to the first (left-most) cell in the next row below.</p><p><b class="bterm">List range selection borders</b></p><p>
+As with PivotTable reports and with the spreadsheet itself, there are areas around the list border that allow you to perform structured selection, such as selecting an entire row or column within the list, or selecting the entire list itself. The area just inside the top and left list borders facilitates this functionality. When you place the mouse pointer over these areas, the shape of the pointer changes to indicate the available functionality to the user.</p><p><b class="bterm">Moving selected ranges in a list</b></p><p>
+
+
+The <b class="bterm">Move Selection</b> pointer appears when you rest on the edge of a selected range, or if you rest on any part of the list border. You cannot move a selection within a list in such a way that it destroys the integrity of the list. You can change the order of rows or columns, and you can move a row or column completely out of the list range; but you cannot, for example, move a row or column to where it overlaps the list border.</p><p> 
+
+There are additional restrictions to data movement in lists that are linked to Windows SharePoint Services.</p><p><b class="bterm">Editing ranges in a list</b></p><p> 
+
+
+Actions taken inside a list generally act on the list itself, and not on any part of the spreadsheet within the list. When you delete a row or column from a list, only the cells in the row or column that are within the list are deleted. The exception is AutoFilter, which acts on entire rows of data in the spreadsheet.</p><p><b class="bterm">Automatic list expansion</b></p><p>
+When you type in a cell immediately below or to the right of an unlinked list, the list automatically expands to include the new data. When the list expands, a smart tag is displayed that allows you to undo the automatic expansion or to modify the setting to disable expanding completely.</p><p>
+
+This functionality is on by default, but can be disabled: On the <b class="ui">Tools</b> menu, select <b class="ui">AutoCorrect Options</b>, and then in the<b class="bterm">AutoCorrect</b> dialog box, on the <b class="bterm">AutoFormat As You Type</b> tab, clear the <b class="bterm">Include new rows and columns in list</b> check box.</p><p><b class="bterm">List resize handle</b></p><p>
+Excel provides a direct method of resizing a list as an alternative to the menu command. You can drag a resize handle in the lower left corner of the list border to resize by columns or by rows. However, you cannot resize by both columns and rows at once.</p><p><b class="bterm">Editing ranges outside of a list</b></p><p>
+
+
+The most important thing to consider when editing ranges outside of a list is that, in general, you cannot perform range-related functions on ranges that include cells within a list and cells outside of the list.</p><p>
+
+One notable exception to this is when you select an entire row or column of the spreadsheet (not just the list) and delete it. In that case, the row or column data that falls within the list is also deleted. This is the case only when the list is not linked to Windows SharePoint Services.</p><p><b class="bterm">Other functionality changes</b></p><p><b class="runinhead">Sort options</b>   The sort options that are displayed in the list AutoFilter drop-down boxes are present in all AutoFilter drop-down boxes, whether or not the drop-down boxes are inside of a list.</p><p>
+
+<b class="runinhead">Subtotal function</b>   The Subtotal function has added new arguments that facilitate subtotaling in the total row of a list. The first argument in the Subtotal function specifies what type of aggregation to use (for example, Sum, Average, etc.). In earlier versions, these arguments are numbered 1-10.</p><p>
+
+In Excel 2003, these arguments have changed, adding 100 to each number, to specify that the Subtotal function is being used inside of a list. The following table shows the aggregate function, its previous argument, and its current argument, used in the list total row.</p><p>
+
+Total row calculation is facilitated by changes to the Subtotal() function:</p><table><tr><td><b class="bterm">Aggregate function</b></td><td>
+
+<b class="bterm">Previous argument</b></td><td>
+ <b class="bterm">List subtotal argument</b></td></tr><tr><td>Average
+ </td><td>Subtotal(1,&lt;range&gt;)</td><td> 
+ 
+
+ Subtotal(101,&lt;range&gt;)</td></tr><tr><td>Count Nums(Count numbers)</td><td>Subtotal(2,&lt;range&gt;)</td><td>Subtotal(102,&lt;range&gt;)</td></tr><tr><td>Count</td><td>
+ 
+
+ 
+ 
+ 
+
+ Subtotal(3,&lt;range&gt;)</td><td>Subtotal(103,&lt;range&gt;)</td></tr><tr><td>Max</td><td>
+ 
+ 
+
+ Subtotal(4,&lt;range&gt;)</td><td>Subtotal(104,&lt;range&gt;)</td></tr><tr><td>Min</td><td>Subtotal(5,&lt;range&gt;)</td><td>Subtotal(105,&lt;range&gt;)</td></tr><tr><td>StDev (Standard Deviation)</td><td>Subtotal(7,&lt;range&gt;)</td><td>Subtotal(107,&lt;range&gt;)</td></tr><tr><td>Sum</td><td>
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ Subtotal(9,&lt;range&gt;)</td><td>
+ Subtotal(109,&lt;range&gt;)</td></tr><tr><td>
+ 
+Var (Variance)</td><td>
+ Subtotal(10,&lt;range&gt;)</td><td>
+ Subtotal(110,&lt;range&gt;)</td></tr><tr><td></td><td></td><td></td></tr></table>
+ 
+
+<p><b>Note</b>  These subtotal arguments are not compatible with lists in earlier versions.</p><h2>General issues</h2><h3><a id="Currency" name="Currency">Problems with currency in Office Excel 2003 linked lists</a></h3><p>
+Publishing national currencies previous to the institution of the euro currency for the European Union (either the currency symbol or the ISO code) will result in a number data type, not currency. This is expected behavior.</p><p>
+
+Excel 2003 supports some currency symbols that are not supported by Windows SharePoint Services. Excel 2003 publishes these currencies to SharePoint sites as numbers.</p><p>
+
+Changing the currency type in a linked list will not change the currency type on the server. This is by design.</p><h3>
+
+<a id="WinForms" name="WinForms">Problems handling events when using Microsoft Office 2003 Web Components on Windows Forms</a></h3><p>To handle events for  a Microsoft Office 2003 Web Component on a .NET Windows Form, you must modify the class wrappers that Microsoft Visual Studio .NET generates for the component. You can work around this problem by using the same techniques documented for Office XP Web Components in the following Knowledge Base articles: "319341- HOW TO: Handle Events for the Office XP Spreadsheet Component on a Windows Form in Visual C# .NET" and "319342 - HOW TO: Handle Events for the Office XP Spreadsheet Component on a Windows Form in Visual Basic .NET."</p><h3>
+
+<a id="44125" name="44125">Certain XPath expressions produce exported XML that is not well-formed</a></h3><p>You can create code using the Office Excel 2003 Object Model to map an XML element in which the XPath expression contains an attribute filter to a cell. In some cases, it's possible to create XML that is not well-formed when you export it. Avoid the following:</p><ul><li>Using the object model to map an attribute to a cell, in which the XPath expression does not contain a predicate expression to a cell (for example, /Root/Element@Attribute maps to cell A1), and then using the object model to map the same attribute to a different cell, in which the XPath expression does contain a predicate expression (for example, /Root/Element[@Attribute='Value'] maps to cell A2).</li><li>Inconsistently using white space or mixing the use of double-quote (") and single-quote (') delimiters, which might lead to the same XPath expression being mapped more than once in an XML map.</li></ul><h3>
+
+<a id="441227" name="441227">AutoFilter does not work properly when one or more cells in a range are mapped to nonrepeating elements</a></h3><p>If you use AutoFilter on a range of data that contains one or more cells mapped to nonrepeating XML elements, the filter does not behave as expected. This can be especially confusing if the blue border that indicates which cells are mapped to nonrepeating XML elements is not visible.</p> 
+
+  
+    
+
+    
+    
+    
+
+
+
+
+
+ 
+
+
+      
+ 
+
+<h3><a id="416853" name="416853">Installing Office XP Web Components after installing Microsoft Office 2003 disables the Microsoft Office 2003 Web Components .NET Programmability Support</a></h3><p>If your computer has  Microsoft .NET Framework 1.1 and Microsoft Office 2003 installed with Microsoft Office 2003 Web Components .NET Programmability Support, and you install Microsoft Office XP Web Components (by running OWC10.msi), Microsoft Office 2003 Web Components. NET Programmability Support will no longer work correctly.</p><p>Microsoft Office 2003 Web Components. NET Programmability Support installs and registers the Microsoft Office 2003 Web Components primary interop assembly (PIA), which is used to work with the Microsoft Office 2003 Web Components COM type library from managed code in Microsoft Visual Studio .NET. Installing Microsoft Office XP Web Components after installing Microsoft Office 2003 causes the PIA to be incorrectly registered.</p><p>You can confirm that the Microsoft Office 2003 Web Components PIA is installed on your computer by opening the C:\Windows\Assembly folder. You should see <b class="bterm">Microsoft.Office.Interop.Owc11</b>.</p><p>To correct this problem, run Microsoft Office 2003 Setup again, select <b class="bterm">Add or Remove Features</b>, and then click <b class="bterm">Next</b>.
+Select <b class="bterm">Choose advanced customization of applications</b>, and then click <b class="bterm">Next</b>. Expand <b class="bterm">Office Shared Features</b>, expand <b class="bterm">Office 2003 Web Components</b>, click <b class="bterm">.NET Programmability Support</b>,  select <b class="bterm">Run from my Computer</b>, and then click <b class="bterm">Update</b>.</p><h3><a id="444522" name="444522">Behavior change when importing an Office Database Connection (.odc) file with a saved user name and password into the Spreadsheet Web Component</a></h3><p>The Spreadsheet Web Component in Microsoft Office 2002 Web Components allowed you to import an Office Database Connection (.odc) file with a saved user name and password without selecting the <b class="bterm">Save password in file</b> check box on the last page of the Import Wizard. However, the Spreadsheet Web Component in Microsoft Office 2003 Web Components now requires selecting the <b class="bterm">Save password in file</b> check box in the Import Wizard and will display an authentication error if you do not. In either case, saving security credentials in an Office Database Connection (.odc) file is not secure. Microsoft recommends using Windows authentication.</p></body></html>

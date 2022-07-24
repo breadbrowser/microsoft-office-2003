@@ -1,0 +1,505 @@
+<html>
+<head>
+<title>Setup Command-line Options and Property</title>
+</head>
+
+<body>
+
+<p><h2><font face="Verdana">Setup Command-line Options and Property</font></h2></p>
+
+
+<p><font face="Verdana" size="2">When you run Setup you can use command-line options to change some of the parameters that Setup uses to install the application,
+such as display settings and default values for Setup properties.</font></p>
+
+<p><font face="Verdana" size="2">Setup and Windows Installer use properties to control the applications installation process. The default values for Setup
+properties are defined in the Windows Installer package (MSI file). You can specify new property values on the command line or
+in the Setup settings file (Setup.ini). </font> </p>
+
+<blockquote>
+	<p><font face="Verdana" size="2"><b>Note</b>&nbsp;&nbsp; In most cases, command-line options override duplicate customizations in the Setup settings file (Setup.ini) or in
+a transform (MST file).  Command-line options and properties are not supported by all MSI files.
+</font></p>
+</blockquote>
+<p>&nbsp;</p>
+<p><font face="Verdana" size="2"><a href="#a">/a</a></font></p>
+<p><font face="Verdana" size="2"><a href="#f">/f</a></font></p>
+<p><font face="Verdana" size="2"><a href="#i">/i</a></font></p>
+<p><font face="Verdana" size="2"><a href="#j">/j</a></font></p>
+<p><font face="Verdana" size="2"><a href="#l">/l</a></font></p>
+<p><font face="Verdana" size="2"><a href="#noreboot">/noreboot</a></font></p>
+<p><font face="Verdana" size="2"><a href="#p">/p</a></font></p>
+<p><font face="Verdana" size="2"><a href="#q">/q</a></font></p>
+<p><font face="Verdana" size="2"><a href="#settings">/settings</a></font></p>
+<p><font face="Verdana" size="2"><a href="#x">/x</a></font></p>
+<p><font face="Verdana" size="2"><a href="#property">property=value</a></font></p>
+<p><font face="Verdana" size="2"><a href="#?">/?</a></font></p>
+<p>&nbsp;</p>
+<p>
+<h2><font face="Verdana"><a name="a"></a>
+/a<i> [msifile</i>]</font></h2>
+<p></p>
+<p><font face="Verdana" size="2">
+Create an administrative installation point for the specified package (MSI file).
+The package must be in the same folder as Setup.exe, and both must be at the root of the
+administrative installation point.
+</font></p>
+
+	<p>
+	<font face="Verdana" size="2">Examples:</font></p>
+	<p>
+	<font size="2" face="Courier">/a My.msi</font></p>
+	<p>
+	<font face="Courier" size="2">/a &quot;subfolder1\My.msi&quot;</font></p>
+
+
+<h2><font face="Verdana"><a name="f"></a>
+/f<i>[options][msifile</i>]</font></h2>
+<p></p>
+<p><font face="Verdana" size="2">
+Force repair of an application associated with the specified package (MSI file).
+The package must be in the same folder as Setup.exe, and both must be at the root of the
+administrative installation point.
+Alternatively, you can specify the product code for the package the product code can be copied from the [Product] section of the Setup settings file.
+</font></p>
+<blockquote>
+	<p>
+	<font face="Verdana" size="2">Note&nbsp;&nbsp; You must specify the same
+	package that was used to install the application originally.</font></p>
+</blockquote>
+
+	<p>
+	<font face="Verdana" size="2">Valid values for &lt;i&gt;options&lt;/i&gt; include the
+	following</font></p>
+<table border="1"width="61%" id="table2">
+	<tr>
+		<td width="126"><b><font face="Verdana" size="2">a</font></b></td>
+		<td><font face="Verdana" size="2">Force reinstallation of all files regardless of checksum or version.</font></td>
+	</tr>
+	<tr>
+		<td width="126"><b><font face="Verdana" size="2">c</font></b></td>
+		<td><font face="Verdana" size="2">Reinstall file if missing or corrupt.</font></td>
+	</tr>
+	<tr>
+		<td width="126"><b><font face="Verdana" size="2">d</font></b></td>
+		<td><font face="Verdana" size="2">Reinstall file if missing or a different version is present.</font></td>
+	</tr>
+	<tr>
+		<td width="126"><b><font face="Verdana" size="2">e</font></b></td>
+		<td><font face="Verdana" size="2">Reinstall file if missing or an equal or older version is present.</font></td>
+	</tr>
+	<tr>
+		<td width="126"><b><font face="Verdana" size="2">m</font></b></td>
+		<td><font face="Verdana" size="2">Rewrite all required HKEY_LOCAL_MACHINE registry entries.</font></td>
+	</tr>
+	<tr>
+		<td width="126"><b><font face="Verdana" size="2">o</font></b></td>
+		<td><font face="Verdana" size="2">Reinstall file if missing or an older version is present.</font></td>
+	</tr>
+	<tr>
+		<td width="126"><b><font face="Verdana" size="2">p</font></b></td>
+		<td><font face="Verdana" size="2">Reinstall file only if missing.</font></td>
+	</tr>
+	<tr>
+		<td width="126"><b><font face="Verdana" size="2">s</font></b></td>
+		<td><font face="Verdana" size="2">Reinstall all shortcuts and overwrite existing shortcuts.</font></td>
+	</tr>
+	<tr>
+		<td width="126"><b><font face="Verdana" size="2">u</font></b></td>
+		<td><font face="Verdana" size="2">Rewrite all required HKEY_CURRENT_USER registry entries.</font></td>
+	</tr>
+	<tr>
+		<td width="126"><b><font face="Verdana" size="2">v</font></b></td>
+		<td><font face="Verdana" size="2">Retrieve the package from the original source and recache it on the
+		local computer.</font></td>
+	</tr>
+</table>
+<p><font face="Verdana" size="2">
+The <b>Detect</b> and <b>Repair</b> command in an applications performs the same function as <b>/focums</b>.
+Running Setup and selecting Reinstall performs the same function as <b>/fecums</b>.
+When you install, Windows Installer saves the MSI file on the local computer.
+When you use the <b>/fvm</b> option to force a recache and reinstallation, Windows Installer retrieves
+the MSI file from the original source and recaches it on the local computer. You can use the <b>/fvm</b> option to
+update client computers after you patch an administrative installation point.
+</font></p>
+<blockquote>
+	<p><font face="Verdana" size="2">
+	<b>Important </b>  If a user applies a client (binary) patches to a computer, you
+	cannot use /f to recache and reinstall on that computer from an updated
+	administrative installation point. In this case, users must uninstall
+	and reinstall from the updated administrative image.
+	</font></p>
+</blockquote>
+
+	<p>
+	<font face="Verdana" size="2">Example:</font></p>
+	<p>
+	<font size="2" face="Courier">/fpiwae My.msi</font></p>
+<p><font size="2" face="Courier">/fvm {12345678-1234-1234-1234-123456789123}</font></p>
+
+
+<h2><font face="Verdana"><a name="i"></a>
+/i<i> [msifile</i>]</font></h2>
+<p><font face="Verdana" size="2">Install applications
+using the specified package. The package must be in the same folder as Setup.exe.</font></p>
+<blockquote>
+	<p><font face="Verdana" size="2"><b>Note&nbsp;</b>By default,
+	Setup.exe directs Windows Installer to perform the same function as /i.</font></p>
+</blockquote>
+
+	<p>
+	<font face="Verdana" size="2">Examples:</font></p>
+	<p>
+	<font size="2" face="Courier">/i My.msi</font></p>
+	<p>
+	<font face="Courier" size="2">/i "subfolder1\My.msi"</font></p>
+
+
+
+
+<h2><font face="Verdana"><a name="j"></a>
+/j<i>[option] [msifile] [/t mstfile]</i></font></h2>
+<p></p>
+<p><font face="Verdana" size="2">
+Advertise the application on the computer and install on first use; you must specify an option to advertise the application to
+either the computer or the user. You can use /j only when running Setup from an administrative installation point or an image of the CD on the network. If no package
+is specified, Setup uses the package specified in Setup.ini. To apply a transform to the advertised application, use the option
+/t and specify an MST file.
+</font></p>
+
+<p>
+	<font face="Verdana" size="2">Valid values for option include the following:</font></p>
+<table border="1"width="61%" id="table2">
+	<tr>
+		<td width="126"><b><font size="2" face="Verdana">m</font></b></td>
+		<td><font size="2" face="Verdana">Advertise to all users on the computer.</font></td>
+	</tr>
+	<tr>
+		<td width="126"><b><font size="2" face="Verdana">u</font></b></td>
+		<td><font size="2" face="Verdana">Advertise to the current user.</font></td>
+	</tr>
+	</table>
+<blockquote>
+	<p><font face="Verdana" size="2"><b>Note&nbsp; </b>&nbsp;In addition to /t, you can use
+	the following three command-line options when you use /j to advertise the
+	application: /l, /q, and /settings.
+ 	</font></p>
+</blockquote>
+<p>
+	<font face="Verdana" size="2">Example:</font></p>
+	<p>
+	<font size="2" face="Courier">/jm My.msi /t Custom.mst </font></p>
+
+
+<h2><font face="Verdana"><a name="l"></a>
+/l<i>[options] logfile</i></font></h2>
+<p></p>
+<p><font face="Verdana" size="2">
+Create a log of installation actions for Setup and a log file for each Windows Installer task.
+The /l option overrides default settings specified in the [Logging] section of Setup.ini. </font></p>
+
+	<p>
+	<font face="Verdana" size="2">Values for option include the following and capture the corresponding data:</font></p>
+<table border="1"width="61%" id="table3">
+	<tr>
+		<td width="126"><b><font face="Verdana" size="2">a</font></b></td>
+		<td><font face="Verdana" size="2">Start of action notification</font></td>
+	</tr>
+	<tr>
+		<td width="126"><b><font face="Verdana" size="2">c</font></b></td>
+		<td><font face="Verdana" size="2">Initial UI parameters</font></td>
+	</tr>
+	<tr>
+		<td width="126"><b><font face="Verdana" size="2">e</font></b></td>
+		<td><font face="Verdana" size="2">Error messages</font></td>
+	</tr>
+	<tr>
+		<td width="126"><b><font face="Verdana" size="2">i</font></b></td>
+		<td><font face="Verdana" size="2">Information-only messages</font></td>
+	</tr>
+	<tr>
+		<td width="126"><b><font face="Verdana" size="2">m</font></b></td>
+		<td><font face="Verdana" size="2">Out-of-memory messages</font></td>
+	</tr>
+	<tr>
+		<td width="126"><b><font face="Verdana" size="2">o</font></b></td>
+		<td><font face="Verdana" size="2">Out-of-disk-space messages</font></td>
+	</tr>
+	<tr>
+		<td width="126"><b><font face="Verdana" size="2">p</font></b></td>
+		<td><font face="Verdana" size="2">Property table list in form property=value</font></td>
+	</tr>
+	<tr>
+		<td width="126"><b><font face="Verdana" size="2">r</font></b></td>
+		<td><font face="Verdana" size="2">Action data record; contains action-specific information</font></td>
+	</tr>
+	<tr>
+		<td width="126"><b><font face="Verdana" size="2">u</font></b></td>
+		<td><font face="Verdana" size="2">User request messages</font></td>
+	</tr>
+	<tr>
+		<td width="126"><b><font face="Verdana" size="2">v</font></b></td>
+		<td><font face="Verdana" size="2">Verbose includes debug messages</font></td>
+	</tr>
+	<tr>
+		<td width="126"><b><font face="Verdana" size="2">w</font></b></td>
+		<td><font face="Verdana" size="2">Warning messages</font></td>
+	</tr>
+	<tr>
+		<td width="126"><b><font face="Verdana" size="2">*</font></b></td>
+		<td><font face="Verdana" size="2">Turn on all logging options except v</font></td>
+	</tr>
+	<tr>
+		<td width="126"><b><font face="Verdana" size="2">+</font></b></td>
+		<td><font face="Verdana" size="2">Append to existing log file</font></td>
+	</tr>
+</table>
+<p><font face="Verdana" size="2"><i>Logfile</i> signifies the name and path
+of the log file to create. When you include (*) in the log file name, Setup creates a
+unique file name for each instance of Setup.  </font></p>
+
+
+	<p>
+	<font face="Verdana" size="2">Example:</font></p>
+	<p>
+	<font size="2" face="Courier">/lv* "%temp%\MyApp Setup(*).txt"
+	</font></p>
+
+<p><font face="Verdana" size="2"> This command line creates the following
+log files:</font></p>
+
+
+
+<ul>
+	<li><font face="Verdana" size="2">Setup.exe log file<br>
+	</font><font size="2" face="Courier New">"%temp%\MyAppSetup(0001).text"
+	</font>
+	</li>
+</ul>
+
+<ul>
+	<li><font face="Verdana" size="2">Windows Installer log file for core packages<br>
+	</font><font size="2" face="Courier New">"%temp%\MyApp(0001)_Task(0001).txt"
+	</font>
+	</li>
+</ul>
+
+
+<h2><font face="Verdana">
+<a name="noreboot"></a>
+/noreboot</font></h2>
+<p></p>
+<p><font face="Verdana" size="2">Do not restart the
+computer or display a restart dialog box at the end of the installation. The <b>/noreboot</b> option sets
+the Windows Installer REBOOT property to<b> ReallySuppress </b>for each package included in the
+installation except the last one.</font></p>
+
+<h2><font face="Verdana"><a name="p"></a>
+/p [<i>mspfile</i>]</font></h2><p>
+<font size="2" face="Verdana">Apply an administrative update (MSP file) to a client
+installation. You can also use <b>/p</b> to apply
+an update to an administrative installation by including the <b>/a</b> option and the name
+and path of the MSI file on the administrative
+installation point. To apply the patch quietly, include <b>/qb</b>
+on the command line to generate a log file, include <b>/l</b>.</font></p>
+	<p>
+	<font face="Verdana" size="2">Examples:</font></p>
+	<p>
+	<font size="2" face="Courier">msiexec /p [<i>mspfile</i>] /qb /l[<i>options</i>]</font></p>
+	<p>
+	<font size="2" face="Courier">msiexec /p [<i>mspfile</i>] /a [<i>msifile</i>]
+	/qb /l[<i>options</i>]</font></p>
+
+
+
+<h2><font face="Verdana"><a name="q"></a>
+/q<i>[option]</i></font></h2>
+<p></p>
+<p><font face="Verdana" size="2">
+Set the Setup user interface display level.
+</font></p>
+<p>
+	<font face="Verdana" size="2">Valid values for options include the following:</font></p>
+<table border="1"width="61%" id="table4">
+	<tr>
+		<td width="126"><font face="Verdana" size="2"><b>b</b></font></td>
+		<td><font face="Verdana" size="2">Display only simple progress indicators and error messages (basic).</font></td>
+	</tr>
+	<tr>
+		<td width="126"><font face="Verdana" size="2"><b>f</b></font></td>
+		<td><font face="Verdana" size="2">Display all dialog boxes and messages; equivalent to omitting the <b>/q</b> option (full).</font></td>
+	</tr>
+	<tr>
+		<td width="126"><font face="Verdana" size="2"><b>n</b></font></td>
+		<td><font face="Verdana" size="2">Display no user interface; equivalent to specifying <b>/q</b> with
+		no options (none).</font></td>
+	</tr>
+	<tr>
+		<td width="126"><font face="Verdana" size="2"><b>r</b></font></td>
+		<td><font face="Verdana" size="2">Display all progress indicators and error messages but collect no
+		user information (reduced).</font></td>
+	</tr>
+	<tr>
+		<td width="126"><font face="Verdana" size="2"><b>-</b></font></td>
+		<td><font face="Verdana" size="2">Suppress all modal dialog boxes; used
+		only with <b>b</b>.</font></td>
+	</tr>
+	<tr>
+		<td width="126"><font face="Verdana" size="2"><b>+</b></font></td>
+		<td><font face="Verdana" size="2">Add completion message to the <b>n</b> or <b>b</b> option.</font></td>
+	</tr>
+	</table>
+<blockquote>
+	<p><font face="Verdana" size="2"><b>Note&nbsp; </b>&nbsp;The
+	completion message is displayed only when Setup does not have to restart the computer
+	after the installation.
+ 	</font></p>
+</blockquote>
+
+
+<h2><font face="Verdana">
+<a name="settings"></a>
+/settings <i>file</i></font></h2><p>
+<font size="2" face="Verdana">Specify a custom Setup settings file for Setup.exe to use in place of
+Setup.ini. The settings file must be in the same folder as Setup.exe, or the path must be
+included on the command line.</font></p>
+<p>
+<font size="2" face="Verdana"></p>
+
+	<p>
+	Example:</p>
+	<p>
+	<font size="2" face="Courier">/settings MyApp.ini</font></p>
+
+
+
+<h2><font face="Verdana"><a name="x"></a>
+/x <i>[msifile]</i></font></h2><p>
+Remove the application associated with the specified package. The package must be in the same folder as Setup.exe,
+and both must be at the root of the administrative installation point.
+</p>
+<blockquote>
+	<p><b>Note&nbsp; </b>You must specify the same package that was used to install the
+	application originally.
+ 	</p>
+</blockquote>
+
+	<p>
+	Example:</p>
+	<p>
+	<font size="2" face="Courier">/x My.msi</font></p>
+
+</font>
+
+
+
+<h2><font face="Verdana"><a name="property"></a>
+property=value</font></h2><p>
+<font size="2" face="Verdana">Specify a property value on the command line.  If the value contains spaces, enclose it in quotation marks ("). To specify two or
+more property-value pairs, separate them with spaces.
+</font></p>
+<table border="1"width="61%" id="table5">
+	<tr>
+		<td width="126"><font face="Verdana" size="2">ALLUSERS=[string]</font></td>
+		<td>
+		<p>
+		<font face="Verdana" size="2">Install application for all users of the computer or for only the current user. By default, Windows Installer installs
+		for all users of the computer. Setting ALLUSERS to a null value ("") overrides this default behavior and installs per user.</font></p>
+		<p>
+		<font face="Verdana" size="2">1 = </font>Install for all users of the computer; requires administrative
+		privileges.</p>
+		<p>
+		2 = Install for all users of the computer.</p>
+		<p>
+		&quot;&quot; = Install only for the user running Setup. </p>
+
+		<p><i>
+		<font face="Verdana" size="2">ALLUSER=&quot;&quot;</font></i></td>
+	</tr>
+	<tr>
+		<td width="126">
+		<p>
+		<font face="Verdana" size="2">CDCACHE=[string]</font></td>
+		<td>
+		<p>
+		<font face="Verdana" size="2">Specify the level of caching.</font></p>
+		<p>
+		<font face="Verdana" size="2">Auto = cache based on available disk space</font></p>
+		<p>
+		<font face="Verdana" size="2">1 = cache only what you install</font></p>
+		<p>
+		<font face="Verdana" size="2">2 = cache entire source</font></p>
+		<p>
+		<font face="Verdana" size="2">0 = cache disabled</font></p>
+		<p><i>
+		<font face="Verdana" size="2">CDCACHE=auto</font></i></td>
+	</tr>
+	<tr>
+		<td width="126">
+		<p>
+		<font face="Verdana" size="2">COMPANYNAME=[string]</font></td>
+		<td>
+		<p>
+		<font face="Verdana" size="2">Specify an organization name.</font></p>
+		<p>
+		<font face="Verdana" size="2"><i>COMPANYNAME=My Business</i></font></td>
+	</tr>
+	<tr>
+		<td width="126">
+		<p>
+		<font face="Verdana" size="2">INSTALLLOCATION=[string]</font></td>
+		<td>
+		<p>
+		<font face="Verdana" size="2">Specify the installation location. </font></p>
+		<p>
+		<font face="Verdana" size="2"><i>INSTALLLOCATION=C:\Program Files\MyApp</i></font></p></td>
+	</tr>
+	<tr>
+		<td width="126">
+		<p>
+		<font face="Verdana" size="2">LOCALCACHEDRIVE=[string]</font></td>
+		<td>
+		<p>
+		<font face="Verdana" size="2">Specify the drive that the installation
+		files will be cached to.</font></p>
+		<p>
+		<font face="Verdana" size="2"><i>LOCALCACHEDRIVE=C</i></font></td>
+	</tr>
+	<tr>
+		<td width="126">
+		<p>
+		<font face="Verdana" size="2">PIDKEY=[string]</font></td>
+		<td>
+		<p>
+		<font face="Verdana" size="2">Enter a 25-character volume license key on the Setup command line or in the Setup settings file. When you set the PIDKEY property, users are not required to enter a product key when they install.</font></p>
+		<p>
+		<font face="Verdana" size="2"><i>PIDKEY=123467890123456789012345</i></font></td>
+	</tr>
+	<tr>
+		<td width="126">
+		<p>
+		<font face="Verdana" size="2">TRANSFORMS=[string]</font></td>
+		<td>
+		<p>
+		<font face="Verdana" size="2">Specify a transform to apply to the
+		installation.</font></p>
+		<p>
+		<font face="Verdana" size="2"><i>
+		TRANSFORMS=\\server\share\myApp\Custom.mst</i></font></td>
+	</tr>
+	<tr>
+		<td width="126">
+		<p>
+		<font face="Verdana" size="2">USERNAME=[string]</font></td>
+		<td>
+		<p>
+		<font face="Verdana" size="2">Specify a default user name.</font></p>
+		<p>
+		<font face="Verdana" size="2"><i>USERNAME=Don Dunk</i></font></td>
+	</tr>
+	</table>
+<font size="2" face="Verdana">
+
+
+</body>
+
+</html>
